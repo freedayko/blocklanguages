@@ -100,9 +100,9 @@ class BlockLanguages extends Module
 	*/
 	public function hookDisplayTop($params)
 	{
-		if (!$this->_prepareHook($params))
-			return;
-		return $this->display(__FILE__, 'blocklanguages.tpl');
+		if ($this->_prepareHook($params)) {
+            return $this->display(__FILE__, 'blocklanguages.tpl');
+        }
 	}
 
 	public function hookDisplayNav($params)
@@ -114,9 +114,9 @@ class BlockLanguages extends Module
 	public function hookDisplayHeader($params)
 	{
 		$this->context->controller->addCSS($this->_path.'blocklanguages.css', 'all');
-		if (!$this->_prepareHook($params))
-			return;
-		return $this->display(__FILE__, 'blocklanguages-header.tpl');
+		if ($this->_prepareHook($params)) {
+            return $this->display(__FILE__, 'blocklanguages-header.tpl');
+        }
 	}
 }
 
